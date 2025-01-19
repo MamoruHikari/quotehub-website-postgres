@@ -1,0 +1,66 @@
+<%- include("partials/header.ejs") %>
+
+<div id="w-node-_3cefce4f-c62d-cf23-2c8c-8b83d39b22c7-1f231c4c" class="inner-wrapper">
+  <section id="team-section" class="team-section">
+    <div class="form-wrapper">
+        <h2>Edit Book </h2>
+        <form action="/book/<%= book.id %>/edit" method="POST">
+            
+            <div>
+                <label for="book_name">Book Name:</label>
+                <input type="text" id="book_name" name="book_name" autocomplete="off" value="<%= book.book_name %>" required>
+            </div>
+
+            <div>
+                <label for="author_name">Author Name:</label>
+                <input type="text" id="author_name" name="author_name" autocomplete="off" value="<%= book.author_name %>" required>
+            </div>
+
+            <div>
+                <label for="date_read">Date:</label>
+                <input type="text" id="date_read" name="date_read" autocomplete="off" value="<%= book.date_read %>" required>
+            </div>
+
+            <div>
+                <label for="rating">Rating:</label>
+                <input type="text" id="rating" name="rating" autocomplete="off" value="<%= book.rating %>" required>
+            </div>
+
+            <div>
+                <label for="key">Identifier:</label>
+                <input type="text" id="key" name="key" autocomplete="off" value="<%= book.key %>" required>
+            </div>
+
+            <div>
+                <label for="value">Code:</label>
+                <input type="text" id="value" name="value" autocomplete="off" value="<%= book.value %>" required>
+            </div>
+
+            <div>
+                <label for="amazon_link">Amazon Link:</label>
+                <input type="text" id="amazon_link" name="amazon_link" autocomplete="off" value="<%= book.amazon_link %>" required>
+            </div>
+
+            <% for (let i = 0; i < notes.length; i++) { %>
+                <div>
+                    <label for="paragraph">Book Note <%= i + 1 %>:</label>
+                    <input type="text" id="paragraph" name="paragraphs[]" autocomplete="off" value="<%= notes[i].paragraph %>" required>
+                    <input type="hidden" name="ids[]" value="<%= notes[i].id %>">
+                </div>
+            <% } %>
+
+            <div>
+                <label for="opinion">Opinion (164 char):</label>
+                <textarea id="opinion" name="opinion" maxlength="164" autocomplete="off" required><%= book.opinion %></textarea>
+            </div>
+    
+            <button type="submit">Update Book</button>
+        </form>
+
+        <form id="deleteForm" action="/book/<%= book.id %>/delete" method="POST">
+            <button type="button" id="deleteButton">Delete Book</button>
+        </form>
+    </div>
+  </section>
+
+<%- include('partials/footer.ejs') %>

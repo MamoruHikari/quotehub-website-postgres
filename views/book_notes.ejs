@@ -1,0 +1,73 @@
+<%- include("partials/header.ejs") %>
+
+    <div
+    class="inner-wrapper"
+    >
+    <section
+        id="approach-section"
+        class="approach-section"
+    >
+        <div class="container flex-h flex-v">
+        <div class="main-sticky-wrapper">
+            <div class="main-sticky-title">
+                <div class="title-wrap title-wrap-approach">
+                    <div class="part">
+                        <div
+                        class="section-title-subheading"
+                        >
+                            <%= book.author_name %>
+                        </div>
+                        <span class="separator">⋅</span>
+                        <div class="dropdown">
+                            <a href="/book/<%= id %>/edit" class="dropdown-toggle">Edit Book</a>
+                          </div>
+                    </div>
+                    <div class="space-small"></div>
+                    <h2
+                    class="section-title"
+                    >
+                        <%= book.book_name %>
+                    </h2>
+                </div>
+                <div class="space-medium"></div>
+                <div
+                    class="approach-image-wrap"
+                >
+                    <img
+                    src="<%= picture %>"
+                    loading="lazy"
+                    sizes="(max-width: 479px) 93vw, (max-width: 767px) 41vw, (max-width: 991px) 42vw, (max-width: 1439px) 47vw, 37vw"
+                    srcset="
+                        <%= picture %>       1000w
+                    "
+                    alt=""
+                    class="approach-image"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="main-sticky-content">
+            <% notes.forEach((note, index) => { %>
+                <div
+                    class="approach-step-wrap"
+                    >
+                    <div class="timeline-circle">
+                        <div class="timeline-circle-dot"></div>
+                    </div>
+                    <div class="approach-step">
+                        <div class="approach-step-left">
+                            <h3 class="approach-number"><%= String(index + 1) %></h3>
+                        </div>
+                        <div class="approach-step-right">
+                            <div class="text-medium line-height-small">
+                                <%= note.paragraph %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        </div>
+    </section>
+
+<%- include('partials/footer.ejs') %>

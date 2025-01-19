@@ -1,0 +1,79 @@
+<%- include("partials/header.ejs") %>
+
+<div id="w-node-_3cefce4f-c62d-cf23-2c8c-8b83d39b22c7-1f231c4c" class="inner-wrapper">
+  <section id="team-section" class="team-section">
+    <div class="form-wrapper">
+        <h2>Add a new Book </h2>
+        <form action="/add" method="POST">
+            
+            <div>
+                <label for="book_name">Book Name:</label>
+                <input type="text" id="book_name" name="book_name" placeholder="Atomic Habits" autocomplete="off" required>
+            </div>
+
+            <div>
+                <label for="author_name">Author Name:</label>
+                <input type="text" id="author_name" name="author_name" placeholder="James Clear" autocomplete="off" required>
+            </div>
+
+            <div>
+                <label for="date_read">Date:</label>
+                <input type="text" id="date_read" name="date_read" placeholder="2024-07-01" autocomplete="off" required>
+            </div>
+
+            <div>
+                <label for="rating">Rating:</label>
+                <input type="text" id="rating" name="rating" placeholder="1-10" autocomplete="off" required>
+            </div>
+
+            <div>
+                <label for="key">Identifier:</label>
+                <input type="text" id="key" name="key" placeholder="ISBN" autocomplete="off" required>
+            </div>
+
+            <div>
+                <label for="value">Code:</label>
+                <input type="text" id="value" name="value" placeholder="978-0345816023" autocomplete="off" required>
+            </div>
+
+            <div>
+                <label for="amazon_link">Amazon Link:</label>
+                <input type="text" id="amazon_link" name="amazon_link" placeholder="https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299/ref=sr_1_1?dib=eyJ2IjoiMSJ9.Zo42SSvuxe8os9H4eIL4obR8KM6pWDJP2kWaSJAlkL3GjHj071QN20LucGBJIEps.CxTD2zwmL5zRrbo23V7w6b_OjIQsIMsdl6WLhrHzEz8&dib_tag=se&keywords=0735211299&qid=1735308955&sr=8-1" autocomplete="off" required>
+            </div>
+
+            <div>
+                <label for="paragraph">Book Note 1:</label>
+                <input type="text" id="paragraph" name="paragraphs[]" autocomplete="off" required>
+            </div>
+
+            <div>
+                <label for="paragraph">Book Note 2:</label>
+                <input type="text" id="paragraph" name="paragraphs[]" autocomplete="off">
+            </div>
+
+            <div>
+                <label for="paragraph">Book Note 3:</label>
+                <input type="text" id="paragraph" name="paragraphs[]" autocomplete="off">
+            </div>
+
+            <div>
+                <label for="paragraph">Book Note 4:</label>
+                <input type="text" id="paragraph" name="paragraphs[]" autocomplete="off">
+            </div>
+
+            <div>
+                <label for="paragraph">Book Note 5:</label>
+                <input type="text" id="paragraph" name="paragraphs[]" autocomplete="off">
+            </div>
+
+            <div>
+                <label for="opinion">Opinion (164 char):</label>
+                <textarea id="opinion" name="opinion" maxlength="164" placeholder="An excellent guide for mastering habits, providing clear strategies to make small, incremental changes that lead to significant personal growth and lasting results." autocomplete="off" required></textarea>
+            </div>
+    
+            <button type="submit">Submit Book</button>
+        </form>
+    </div>
+  </section>
+
+<%- include('partials/footer.ejs') %>
