@@ -4789,10 +4789,6 @@ p {
 }
 
 @media screen and (max-width: 991px) {
-  .hero-section {
-    height: 100vh;
-  }
-  
   .navbar {
     background-color: var(--dark);
     justify-content: center;
