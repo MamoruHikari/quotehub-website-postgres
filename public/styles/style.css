@@ -4789,6 +4789,10 @@ p {
 }
 
 @media screen and (max-width: 991px) {
+  .hero-scroll-wrap {
+    height: 100vh;
+  }
+  
   .navbar {
     background-color: var(--dark);
     justify-content: center;
