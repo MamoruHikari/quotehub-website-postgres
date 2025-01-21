@@ -4789,7 +4789,7 @@ p {
 }
 
 @media screen and (max-width: 991px) {
-  .hero-scroll-wrap {
+  .hero-section {
     height: 100vh;
   }
   
