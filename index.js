@@ -4,14 +4,10 @@ import axios from "axios";
 import pg from "pg";
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; 
 
 const pool = new pg.Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "book_notes",
-  password: "japanfuture",
-  port: 5432
+  connectionString: 'postgresql://postgresdb_owner:XLNl3T5gmeOB@ep-frosty-dew-a2nbh26t.eu-central-1.aws.neon.tech/postgresdb?sslmode=require',
 });
 
 app.use(bodyParser.urlencoded({ extended: true }));
